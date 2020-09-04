@@ -1,6 +1,6 @@
 <?php
 
-define('SITE_URL', 'http://localhost/FP-73/agenda-contatos/');
+define('SITE_URL', 'http://localhost/agenda-contatos/');
 
 // Config Databse
 define("DB_DSN", "mysql:dbname=agenda;host=localhost");
