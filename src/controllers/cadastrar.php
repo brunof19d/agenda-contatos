@@ -20,12 +20,11 @@ try {
 
         if (array_key_exists('tel_contato', $_POST) && filter_var($_POST['tel_contato'], FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES)) {
 
-            if (contains_number($_POST['tel_contato'])) {
-                $contato->setTelefone(formatoTelefone($_POST['tel_contato']));
+            if (contem_numero($_POST['tel_contato']) && strlen($_POST['tel_contato']) == 11) {
+                $contato->setTelefone($_POST['tel_contato']);
             } else {
-                throw new Exception("Telefone precisa conter somente numeros!.");
+                throw new Exception("Telefone precisa conter 9 numeros.");
             }
-
         } else {
             throw new Exception("Telefone é obrigatório!");
         }

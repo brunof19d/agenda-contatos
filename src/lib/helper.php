@@ -39,7 +39,7 @@ function get_mensagem(string $id = 'msg')
 
 function formatoTelefone($telefone)
 {
-    return preg_replace('/(\d{2})(\d{4})(\d*)/', '($1) $2-$3', $telefone);
+    return preg_replace('/(\d{2})(\d{5})(\d*)/', '($1) $2-$3', $telefone);
 }
 
 function tem_post()
@@ -51,6 +51,6 @@ function tem_post()
     return false;
 }
 
-function contains_number($string) {
+function contem_numero($string) {
     return is_numeric(filter_var($string, FILTER_SANITIZE_NUMBER_INT));
  }

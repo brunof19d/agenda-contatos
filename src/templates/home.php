@@ -25,14 +25,14 @@ include "templates/alert-mensagens.php";
                     <th scope="row"><?= $contato->getId(); ?></th>
                     <td><?= htmlspecialchars($contato->getNome()); ?></td>
                     <td><?= htmlspecialchars($contato->getEmail()); ?></td>
-                    <td><?= htmlspecialchars($contato->getTelefone()); ?></td>
+                    <td><?= formatoTelefone($contato->getTelefone()); ?></td>
                     <td>
                         <a href="<?= SITE_URL . "src/templates/" ?>editar.php?id=<?= $contato->getId(); ?>" title="Editar" class="btn btn-success btn-sm">
                             <i class="fas fa-edit"></i>
                         </a>
                     </td>
                     <td>
-                        <a href="<?= SITE_URL . "src/templates/" ?>excluir.php?id=<?=$contato->getId();?>" title="Excluir" class="btn btn-danger btn-sm">
+                        <a href="<?= SITE_URL . "src/templates/" ?>excluir.php?id=<?= $contato->getId(); ?>" title="Excluir" class="btn btn-danger btn-sm">
                             <i class="far fa-trash-alt"></i>
                         </a>
                     </td>
