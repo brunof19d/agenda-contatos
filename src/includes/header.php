@@ -12,3 +12,42 @@
 </head>
 
 <body>
+
+    <div class="container">
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="index.php">
+                <i class="far fa-calendar-check"></i>
+                Agenda
+                <span class="navbar-text"> / Meus Contatos</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                <?php foreach ($menu_items as $chave => $item) :
+                    $active = ($link_ativo == $chave) ? 'active' : null;
+                ?>
+                    <li class="nav-item <?= $active ?>">
+                        <a class="nav-link" href="<?= $item[1] ?>">
+                            <?= $item[0] ?>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= SITE_URL; ?>src/templates/cadastrar.php">Cadastrar Contato</a>
+                    </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </nav>
+        <hr>
+
+        <?php foreach ($menu_items as $chave => $item) :
+                        $active = ($link_ativo == $chave) ? 'active' : null;
+                    ?>
+                        <li class="nav-item <?= $active ?>">
+                            <a class="nav-link" href="<?= $item[1] ?>">
+                                <?= $item[0] ?>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
