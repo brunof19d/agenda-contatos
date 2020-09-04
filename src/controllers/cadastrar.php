@@ -18,15 +18,20 @@ try {
             throw new Exception("E-mail é obrigatório!");
         }
 
-        if (array_key_exists('tel_contato', $_POST)  && filter_var($_POST['tel_contato'], FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES)) {
-            $contato->setTelefone(formatoTelefone($_POST['tel_contato']));
+        if (array_key_exists('tel_contato', $_POST) && filter_var($_POST['tel_contato'], FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES)) {
+
+            if (contains_number($_POST['tel_contato'])) {
+                $contato->setTelefone(formatoTelefone($_POST['tel_contato']));
+            } else {
+                throw new Exception("Telefone precisa conter somente numeros!.");
+            }
+
         } else {
             throw new Exception("Telefone é obrigatório!");
         }
-        
+
         $repositorio_contatos->salvarContato($contato);
         set_mensagem('Contato salvo com sucesso', 'alert-success', 'home.php');
-
     }
 } catch (\Throwable $e) {
     set_mensagem($e->getMessage(), 'alert-danger');
