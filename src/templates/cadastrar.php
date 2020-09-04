@@ -1,19 +1,15 @@
 <?php
 
 require_once "config.php";
-
+$titulo_page = 'Cadastrar Contato';
 $link_ativo = 'cadastrar';
 require_once "includes/header.php";
 
+require_once "controllers/cadastrar.php";
+
+include "templates/alert-mensagens.php"; 
+
 ?>
-
-<div class="alert alert-danger">
-    Não foi possível cadastrar o contato
-</div>
-
-<div class="alert alert-success">
-    Cadastro realizado com sucesso
-</div>
 
 <form class="card" method="POST">
     <div class="row p-3">
@@ -23,14 +19,14 @@ require_once "includes/header.php";
         </div>
         <div class="form-group col-md-6">
             <label>* E-mail:</label>
-            <input type="email" name="email_contato" class="form-control" placeholder="Digite o e-mail do contato..." />
+            <input type="text" name="email_contato" class="form-control" placeholder="Digite o e-mail do contato..." />
         </div>
         <div class="form-group col-md-6">
             <label>* Telefone:</label>
             <input type="tel" name="tel_contato" class="form-control" placeholder="Digite o telefone do contato..." />
         </div>
         <div class="form-group col-12">
-            <button name="cadastrar_contato" class="btn btn-success">
+            <button class="btn btn-success">
                 Cadastrar
             </button>
         </div>

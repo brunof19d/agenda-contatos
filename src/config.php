@@ -7,7 +7,10 @@ define("DB_DSN", "mysql:dbname=agenda;host=localhost");
 define("DB_USER", "root");
 define("DB_PWD", "");
 
-
+/** Habilita o uso de sessões na nossa aplicação */
+if (!session_id()) {
+    session_start();
+}
 
 require_once "lib/database.php";
 require_once "lib/helper.php";
@@ -22,3 +25,5 @@ spl_autoload_register(function ($nomeClasse) {
         throw new Exception("Não foi possível carregar a classe: $nomeClasse");
     }
 });
+
+$repositorio_contatos = new AgendaRepository($pdo);

@@ -2,10 +2,10 @@
 
 class Contato
 {
-    private $id;
-    private $nome;
-    private $email;
-    private $telefone;
+    private int $id;
+    private string $nome;
+    private string $email;
+    private string $telefone;
 
     public function setId($id)
     {
