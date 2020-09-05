@@ -5,7 +5,6 @@ $link_ativo = 'home';
 require_once "includes/header.php";
 require_once "controllers/home.php";
 include "templates/alert-mensagens.php";
-
 ?>
 
 <div class="table-responsive">

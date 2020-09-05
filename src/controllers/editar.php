@@ -1,10 +1,10 @@
 <?php
-
+// Chamando funcao que mostra mensagem de erros
 $msg = get_mensagem();
-
-
+// Chamando nosso repositorio(AgendaRepository) com a funcao buscar com um GET ID
 $contato = $repositorio_contatos->buscar($_GET['id']);
 
+// Verifica e lida com o POST do formulario
 try {
     if (tem_post()) {
         $contato_id = $_POST['contato_id'];

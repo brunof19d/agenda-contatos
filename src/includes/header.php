@@ -1,6 +1,5 @@
 <?php $menu_items = get_menu(); ?>
 
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -15,7 +14,6 @@
 </head>
 
 <body>
-
     <div class="container">
         <nav class="navbar navbar-light bg-light">
             <a class="navbar-brand" href="<?= SITE_URL ?>index.php">

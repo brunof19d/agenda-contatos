@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Classe getters e setters do Contato
+ * @param int $id
+ * @param string $nome
+ * @param string $email
+ * @param string $telefone
+ */
 class Contato
 {
     private int $id;

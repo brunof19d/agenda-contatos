@@ -1,8 +1,10 @@
 <?php
-
+// Chamando funcao que mostra mensagem de erros
 $msg = get_mensagem();
+// Chamando uma classe Contato
 $contato = new Contato();
 
+// Verifica e lida com o POST do formulario
 try {
     if (tem_post()) {
 
@@ -17,7 +19,7 @@ try {
         } else {
             throw new Exception("E-mail é obrigatório!");
         }
-
+        
         if (array_key_exists('tel_contato', $_POST) && filter_var($_POST['tel_contato'], FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES)) {
 
             if (contem_numero($_POST['tel_contato']) && strlen($_POST['tel_contato']) == 11) {

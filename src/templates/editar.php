@@ -1,15 +1,9 @@
 <?php
-
 require_once "config.php";
-
-$titulo_page = 'Editar Contato';
-
+$titulo_page = 'Editar Contato'; // Nome da sessão da pagina.
 require_once "includes/header.php";
-
 require_once "controllers/editar.php";
-
 include "templates/alert-mensagens.php";
-
 ?>
 
 <form class="card" method="POST">
@@ -32,7 +26,6 @@ include "templates/alert-mensagens.php";
             <button name="atualizar_contato" class="btn btn-success">
                 Salvar
             </button>
-
         </div>
     </div>
 </form>
